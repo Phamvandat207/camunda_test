@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/camunda_test
+    username: postgres
+    password: 123456
+
+camunda:
+  bpm:
+    admin-user:
+      id: dat
+      password: dat
