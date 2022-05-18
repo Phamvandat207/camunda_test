@@ -1,3 +1,3 @@
-Đây là một số tài liệu liên quan khi tìm hiểu về Camunda
+Đây là một số tài liệu liên quan khi tìm hiểu về Camunda chứa trong thư mục /Doc
 
 1 Mô tả về các bảng tự sinh trong Camunda.(WIP)
