@@ -9,4 +9,5 @@ import lombok.*;
 @AllArgsConstructor
 public class CamundaProcessDTO {
     private String processKey;
+    private String userTaskId;
 }

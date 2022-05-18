@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0q0czdh" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <bpmn:process id="exclsiveGatewayProcess" name="exclsiveGatewayProcess" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0lmaq5i</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gateway_1eupdeo">
+      <bpmn:incoming>Flow_0lmaq5i</bpmn:incoming>
+      <bpmn:outgoing>Flow_1p3nar2</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0libdo2</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0lmaq5i" sourceRef="StartEvent_1" targetRef="Gateway_1eupdeo" />
+    <bpmn:sequenceFlow id="Flow_1p3nar2" sourceRef="Gateway_1eupdeo" targetRef="Activity_04dvdn3">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${useService == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0libdo2" sourceRef="Gateway_1eupdeo" targetRef="Activity_0eocru1">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${useService == false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:endEvent id="Event_19bhuxt">
+      <bpmn:incoming>Flow_1c4ibld</bpmn:incoming>
+      <bpmn:incoming>Flow_0ujc3f0</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1c4ibld" sourceRef="Activity_04dvdn3" targetRef="Event_19bhuxt" />
+    <bpmn:sequenceFlow id="Flow_0ujc3f0" sourceRef="Activity_0eocru1" targetRef="Event_19bhuxt" />
+    <bpmn:serviceTask id="Activity_04dvdn3" camunda:delegateExpression="${ServiceTaskDelegate}">
+      <bpmn:incoming>Flow_1p3nar2</bpmn:incoming>
+      <bpmn:outgoing>Flow_1c4ibld</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:scriptTask id="Activity_0eocru1" scriptFormat="JavaScript">
+      <bpmn:incoming>Flow_0libdo2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ujc3f0</bpmn:outgoing>
+      <bpmn:script>var log = org.slf4j.LoggerFactory.getLogger("my.Logger");
+      log.info("This is a scriptTask!")</bpmn:script>
+    </bpmn:scriptTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="exclsiveGatewayProcess">
+      <bpmndi:BPMNEdge id="Flow_0lmaq5i_di" bpmnElement="Flow_0lmaq5i">
+        <di:waypoint x="215" y="200" />
+        <di:waypoint x="265" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1p3nar2_di" bpmnElement="Flow_1p3nar2">
+        <di:waypoint x="290" y="175" />
+        <di:waypoint x="290" y="120" />
+        <di:waypoint x="370" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0libdo2_di" bpmnElement="Flow_0libdo2">
+        <di:waypoint x="290" y="225" />
+        <di:waypoint x="290" y="290" />
+        <di:waypoint x="370" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1c4ibld_di" bpmnElement="Flow_1c4ibld">
+        <di:waypoint x="470" y="120" />
+        <di:waypoint x="511" y="120" />
+        <di:waypoint x="511" y="200" />
+        <di:waypoint x="552" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ujc3f0_di" bpmnElement="Flow_0ujc3f0">
+        <di:waypoint x="470" y="290" />
+        <di:waypoint x="511" y="290" />
+        <di:waypoint x="511" y="200" />
+        <di:waypoint x="552" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1eupdeo_di" bpmnElement="Gateway_1eupdeo" isMarkerVisible="true">
+        <dc:Bounds x="265" y="175" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_19bhuxt_di" bpmnElement="Event_19bhuxt">
+        <dc:Bounds x="552" y="182" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07k43el_di" bpmnElement="Activity_04dvdn3">
+        <dc:Bounds x="370" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pnah3z_di" bpmnElement="Activity_0eocru1">
+        <dc:Bounds x="370" y="250" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
