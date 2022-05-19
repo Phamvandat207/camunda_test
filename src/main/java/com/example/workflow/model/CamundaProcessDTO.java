@@ -2,6 +2,8 @@ package com.example.workflow.model;
 
 import lombok.*;
 
+import java.util.Map;
+
 @Getter
 @Setter
 @Builder
@@ -10,4 +12,5 @@ import lombok.*;
 public class CamundaProcessDTO {
     private String processKey;
     private String userTaskId;
+    private Map<String, Object> variables;
 }
