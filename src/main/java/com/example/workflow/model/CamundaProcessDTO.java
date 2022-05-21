@@ -11,6 +11,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class CamundaProcessDTO {
     private String processKey;
+    private String processInstanceId;
     private String userTaskId;
     private Map<String, Object> variables;
 }

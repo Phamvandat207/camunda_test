@@ -3,3 +3,17 @@
 Ksrc/main/java/com/example/workflow/service/camunda/ServiceTaskDelegate.java,8\2\8247976a7fd351edea8693f7f5e3a3e72d03c22b
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+Š
+Zsrc/main/java/com/example/workflow/service/camunda/housechore/CleaningServiceDelegate.java,d\6\d6c9401eda6f315f25e4eeb99c8e860fdcb63eab
+8
+Doc/2.md,4\2\42b2221d0f77e508e8d0b47a07f55f4cc29a2248
+‘
+asrc/main/java/com/example/workflow/service/camunda/housechore/SleeperCheckingServiceDelegate.java,8\7\876e90c2e46c832935339107e8313e90ba3185d9
+‘
+asrc/main/java/com/example/workflow/service/camunda/housechore/WeatherCheckingServiceDelegate.java,9\b\9bc66fbd756f6e5a34779062877873a1e7aca1e3
+“
+csrc/main/java/com/example/workflow/service/camunda/housechore/OtherRoomCleaningServiceDelegate.java,3\4\34537b2fe88e28a9cee34aefe7c06bd8ba3ccc29
+‘
+asrc/main/java/com/example/workflow/service/camunda/housechore/BedroomCleaningServiceDelegate.java,6\6\6655792871136d2ff8d576b6d051c52442548956
+}
+Msrc/main/java/com/example/workflow/service/camunda/housechore/MailSender.java,8\0\801baad423b97314d703e2dfe23059fb9d3fbf99
