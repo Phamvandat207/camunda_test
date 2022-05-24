@@ -31,6 +31,12 @@ public class HomeController {
         return taskService.createTaskQuery().processInstanceId(processInstanceId).singleResult().getId();
     }
 
+    @PostMapping("void-create")
+    public void voidStartProcess(@RequestBody CamundaProcessDTO camundaProcessDTO){
+        runtimeService.createProcessInstanceByKey(camundaProcessDTO.getProcessKey())
+                .setVariables(camundaProcessDTO.getVariables()).execute();
+    }
+
     @PostMapping("/comp-task")
     public String completeTask(@RequestBody CamundaProcessDTO camundaProcessDTO){
         Map<String, Object> variables = camundaProcessDTO.getVariables();

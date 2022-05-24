@@ -1,6 +1,4 @@
 
-{
-Ksrc/main/java/com/example/workflow/service/camunda/ServiceTaskDelegate.java,8\2\8247976a7fd351edea8693f7f5e3a3e72d03c22b
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Š
@@ -17,3 +15,7 @@ csrc/main/java/com/example/workflow/service/camunda/housechore/OtherRoomCleaning
 asrc/main/java/com/example/workflow/service/camunda/housechore/BedroomCleaningServiceDelegate.java,6\6\6655792871136d2ff8d576b6d051c52442548956
 }
 Msrc/main/java/com/example/workflow/service/camunda/housechore/MailSender.java,8\0\801baad423b97314d703e2dfe23059fb9d3fbf99
+o
+?src/main/java/com/example/workflow/model/CamundaProcessDTO.java,6\a\6ab648b6ab6e8214e986f1baead0611d6ec7884c
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
