@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_004odeh" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <bpmn:process id="demoMsgEndEventA" name="Demo Message End Event A" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0avbhge</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0avbhge" sourceRef="StartEvent_1" targetRef="Activity_1rpnid3" />
+    <bpmn:sequenceFlow id="Flow_1gy9vmx" sourceRef="Activity_1kdl2y1" targetRef="Event_0igudea" />
+    <bpmn:userTask id="Activity_1rpnid3" name="Bạn xin nghỉ mấy ngày?">
+      <bpmn:incoming>Flow_0avbhge</bpmn:incoming>
+      <bpmn:outgoing>Flow_028tm0z</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0igudea" name="Gửi tin xin nghỉ đến quản lý">
+      <bpmn:incoming>Flow_1gy9vmx</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1xkfusl" camunda:class="com.example.workflow.service.camunda.msgendevent.MsgEndEventA" />
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_028tm0z" sourceRef="Activity_1rpnid3" targetRef="Activity_1kdl2y1" />
+    <bpmn:serviceTask id="Activity_1kdl2y1" name="Log ra số ngày xin nghỉ" camunda:delegateExpression="${LogOffDays}">
+      <bpmn:incoming>Flow_028tm0z</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gy9vmx</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmn:message id="Message_2ldpc37" name="sentOffDaysRequest" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="demoMsgEndEventA">
+      <bpmndi:BPMNEdge id="Flow_028tm0z_di" bpmnElement="Flow_028tm0z">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="490" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gy9vmx_di" bpmnElement="Flow_1gy9vmx">
+        <di:waypoint x="590" y="117" />
+        <di:waypoint x="692" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0avbhge_di" bpmnElement="Flow_0avbhge">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1j3dhou_di" bpmnElement="Activity_1rpnid3">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_19ykgyp_di" bpmnElement="Event_0igudea">
+        <dc:Bounds x="692" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="674" y="142" width="76" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1m8p11n_di" bpmnElement="Activity_1kdl2y1">
+        <dc:Bounds x="490" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

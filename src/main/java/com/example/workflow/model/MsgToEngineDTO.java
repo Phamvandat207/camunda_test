@@ -9,11 +9,8 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CamundaProcessDTO {
-    private String processKey;
-    private String processDefKey;
-    private String processInstanceId;
+public class MsgToEngineDTO {
+    private String msgName;
     private String businessKey;
-    private String userTaskId;
     private Map<String, Object> variables;
 }
